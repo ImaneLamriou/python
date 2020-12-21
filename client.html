@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="fr">
+ 
+ 
+  <head>
+    <meta charset="UTF-8" />
+    <!-----------------------------------------------------------------------------------Le titre------------------------------------------------------------------------------------------------->
+      <div class="titre" >
+        <title> L'art et la Manière </title>
+      </div>
+
+    <!-----------------------------------------------------------------------------------Les liens pour le serveur---------------------------------------------------------------------------------->
+    <link rel="stylesheet" href="http://127.0.0.1:5000/css" />
+    <link rel="shortcut icon" href="http://127.0.0.1:5000/favicon" />
+  </head>
+  
+
+  <body class="contenaire">
+
+     <!-----------------------------------------------------------------------------------Affichage du resultat--------------------------------------------------------------------------------------->
+    <ul id="resultats"></ul>
+  
+     <!------------------------------------------------------------------------------------l'entéte du site-------------------------------------------------------------------------------------------->  
+
+      <div class="titre"> “ Soyez simple avec Art ” </div>
+
+        <div class="citation">
+           Le rapport des arts et des sciences à la vie réelle est très-différent, selon leur degré de culture, les temps et mille autres circonstances ; 
+           ce qui fait qu'il est très-difficile de se former une idée exacte de l'ensemble ...
+        </div>
+
+        <label class="form" > 
+          Ceci est un formulaire qui vas nous permettre de vous connaitre un peu plus !</div>
+        </label>
+
+      <!-----------------------------------------------------------------------------------Les differentes questions du formulaire------------------------------------------------------------------------->
+      <div class="formulaire">
+
+        <div class="aime_art">
+          <label>Aimez vous l'art:</label>
+          <input type="radio" name="type" value="oui" id="oui">
+          <label for="oui">Oui</label>
+          <input type="radio" name="type" value="non" id="non" checked>
+          <label for="non">Non</label>
+        </div>
+        
+        <div class="dom_art">
+          <label>Domaines artistiques:</label>
+          <input type="checkbox" name="domaine[]" value="domaine_art" id="domaine_photo">
+          <label for="domaine_photo">Photographie</label>
+          <input type="checkbox" name="domaine[]" value="domaine_art" id="domaine_dessin">
+          <label for="domaine_dessin">Dessin</label>
+          <input type="checkbox" name="domaine[]" value="domaine_art" id="domaine_sculpture">
+          <label for="domaine_sculpture">Sculpture</label>
+          <input type="checkbox" name="domaine[]" value="domaine_art" id="domaine_bande">
+          <label for="domaine_bande">Bande Dessinée</label>
+        </div>
+        
+        <div class="connaissance_art"> 
+          <label>Connaissez vous des artistes peintres , photographe , sculpteur ou bdéiste ?</label>
+          <input type="radio" name="type" value="oui" id="oui">
+          <label for="oui">Oui</label>
+          <input type="radio" name="type" value="non" id="non" checked>
+          <label for="non">Non</label> 
+          <p> Si Oui citez-en un que vous aimez </p>
+          <input type="text" required name="annee" placeholder="Ex : Steve Maccury" size="40" pattern="^[^0-9]+$">
+        </div> 
+        
+        <div class="annee_art">
+          <p>Citez l'une de ses oeuvres et l'année de diffusion </p>
+          <input type="text" required name="annee" placeholder="Livre de Bresson , 1994" size="50" pattern="^[^0-9]+$">
+        </div>
+
+        <div class="passion_art">
+          <label>Etes vous passionez de l'un des domaines artistiques citer ?</label> 
+          <input type="radio" name="type" value="oui" id="oui">
+          <label for="oui">Oui</label>
+          <input type="radio" name="type" value="non" id="non" checked>
+          <label for="non">Non</label>
+          <p>Si oui le quel ?</p>
+          <input type="text" required name="passion" placeholder="Sculpture , Dession , Photo ..." size="50" pattern="^[^0-9]+$">
+        </div>
+
+      <!-----------------------------------------------------------------------------------Pour le bouton de recherche------------------------------------------------------------------------------------------------>
+        <div class="recherche">
+          <h3>Si vous étes curieux ..</h3>
+          <p>Tapez les noms des artistes pour en savoir plus sur leurs parcours et leurs vies </p>
+          Critère : <input type="text" id="critere" />
+          <button onclick="recherche()"> Valider </button>
+        </div>
+
+        <footer>
+          <p class="footer">&copy;LAMRIOU Imane <span class="separator"></span>&copy;NAUDET Maëva</p> 
+        </footer>
+        </div>
+    
+
+  </body>
+
+   <!-----------------------------------------------------------------------------------Le script pour recupération du résultat-------------------------------------------------------------------------------------->
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>     
+  
+  <script>
+     function recherche() {
+       //let : permet de declarer une variable d'une maniére simple
+       //la méthode .val() est principalement utiliséé pour obtenir les valeurs des elements du formulaires comme input
+         let critere = $("#critere").val();
+         console.log("Dans recherche() avec "+critere);
+         //Affiche le contenue de l'objet passé en paramétre dans la console JS du navigateur
+         $.getJSON("http://localhost:5000/client/"+critere, function(reponses) {
+             for (let reponse of reponses) {
+                 let url = "https://fr.wikipedia.org/w/index.php?title="+reponse[0];
+                 let html = "<li>";
+                 html += "<a href='"+url+"'>"+reponse[0]+"</a> : "+reponse[1];
+                 html += "</li>";
+                 /*Permet de selectionner un élément d'une page pour l'insérer dans une autre*/
+                // .append() Insérez du contenue à la fin de tous les elements pour affichez le resultat
+                 $("#resultats").append(html);
+             }
+         });
+     }
+  </script>  
+</html>
+ 
+

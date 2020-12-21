@@ -1,0 +1,145 @@
+
+.contenaire {
+
+    /*---------------------------------------------------------------------Gestion de l'arrière plan---------------------------------------------------*/
+    
+    background-image:url("http://127.0.0.1:5000/image");
+    /*background-image: url(fond.jpg);*/
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    }
+
+
+    /* ----------------------------------------------------------------------Titre----------------------------------------------------------*/
+    .titre {
+        font-family: 'Times New Roman';
+        font-size: 3em;
+        letter-spacing: 1px;
+        text-align: center;
+        color: rgb(114, 74, 40);
+        margin: 5px;
+        padding:5px;
+      
+    }
+
+
+    .citation{ 
+        font-family: 'Times New Roman', Times, serif;
+        text-align: center;
+        color: rgb(46, 51, 47); 
+        margin :30px;
+        font-size: 1.5em;
+        }
+
+    
+    .form{
+        font-family: 'Times New Roman', Times, serif;
+        text-align: center;
+        color:rgb(89, 38, 16) ;
+        margin :650px;
+        font-size: 1em;
+        }
+
+   /* ----------------------------------------------------------------------Pour le style des questions----------------------------------------------------------*/
+     
+   .formulaire{
+        background-color: #d5d25b80;
+        float: center;
+        border: 1px #27abbd80;
+        border-radius: 2em;
+        width: 800px;
+        height: 800px;
+        margin-left: 500PX;
+        padding-top: 0.5PX;
+   }
+
+    .aime_art{
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 1em;
+        letter-spacing: 1px;
+        text-align: center;
+        color: rgb(45, 86, 124);
+        margin: 0;
+        padding:20px 25px 25px 20px;
+    }
+
+    .dom_art{
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 1em;
+        letter-spacing: 1px;
+        text-align: center;
+        color: rgb(45, 86, 124);
+        margin: 0;
+        padding: 10px 10px 10px 10px ;
+    }
+
+    .connaissance_art{
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 1em;
+        letter-spacing: 1px;
+        text-align: center;
+        color: rgb(45, 86, 124);
+        margin: 0;
+        padding: 20px 10px 10px 20px;
+        
+    }
+
+    
+.annee_art{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1em;
+    letter-spacing: 1px;
+    text-align: center;
+    color: rgb(45, 86, 124);
+    margin: 0;
+    padding: 20px 10px 10px 20px;
+}
+
+.passion_art{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1em;
+    letter-spacing: 1px;
+    text-align: center;
+    color: rgb(45, 86, 124);
+    margin: 0;
+    padding: 20px 10px 10px 20px;
+}
+    
+.recherche{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1em;
+    letter-spacing: 1px;
+    text-align: center;
+    color: rgb(132, 122, 67);
+    margin: 0;
+    padding: 20px 10px 10px 20px;
+}
+    
+::placeholder {
+    color: rgb(155, 120, 54);
+    font-size: 1em;
+    background-color: rgb(202, 238, 210);
+    border-radius: 4px ;
+    text-align: center;
+}
+
+ /* ----------------------------------------------------------------------Le Footer----------------------------------------------------------*/
+     
+.footer{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+    color: rgb(86, 100, 49);
+    margin :35PX;
+    font-size: 1em;
+}
+
+
+
+
+
+
+
+
